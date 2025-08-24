@@ -666,11 +666,6 @@ function salvarNota() {
     enviada: false,
   };
 
-  if (!nota.fornecedor || !nota.nf || !nota.valor) {
-    toast("Preencha ao menos o Fornecedor, NF e Valor.");
-    return;
-  }
-
   adicionarFornecedor(nota.fornecedor);
 
   notasPendentes.unshift(nota);
