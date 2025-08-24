@@ -109,6 +109,7 @@ input, select, textarea {
   transition: var(--transition);
   font-family: inherit;
   color: var(--text-dark);
+  user-select: none; /* Adicionado para evitar o fechamento */
 }
 
 input:focus, select:focus, textarea:focus {
@@ -205,7 +206,8 @@ input:focus, select:focus, textarea:focus {
 }
 
 .status-container .hint {
-  margin-top: 0;
+  font-size: 12px;
+  color: var(--text-light);
 }
 
 .actions {
