@@ -641,6 +641,42 @@ function excluirFotoPreview() {
     }
 }
 
+function salvarNota() {
+  const nota = {
+    data: dataEl.value.trim(),
+    nf: nfEl.value.trim(),
+    vencimento: vencEl.value.trim(),
+    valor: valorEl.value.trim(),
+    fornecedor: fornEl.value.trim().toUpperCase(),
+    obs: obsEl.value,
+    fotos: fotosAcumuladas,
+    enviada: false,
+  };
+
+  if (!nota.fornecedor || !nota.nf || !nota.valor) {
+    toast("Preencha ao menos o Fornecedor, NF e Valor.");
+    return;
+  }
+
+  adicionarFornecedor(nota.fornecedor);
+
+  notasPendentes.unshift(nota);
+
+  salvarEstado();
+
+  const camposEntrada = [nfEl, vencEl, valorEl, fornEl];
+  camposEntrada.forEach(el => el.value = "");
+  obsEl.value = "";
+  fotosAcumuladas = [];
+  miniaturasContainer.innerHTML = '';
+  fileCountHintEl.textContent = 'Nenhuma imagem acumulada.';
+  fileLabelEl.classList.remove('active');
+
+  rebuildSaida();
+
+  toast("✅ Nota salva! Agora é só exportar ou gerenciar.");
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
     carregarEstado();
