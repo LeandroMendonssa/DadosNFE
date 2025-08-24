@@ -40,7 +40,7 @@ body {
   background: var(--bg-primary);
   color: var(--text-dark);
   font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.47059;
   font-weight: 400;
   letter-spacing: -0.022em;
@@ -104,7 +104,7 @@ input, select, textarea {
   padding: 14px 16px;
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
-  font-size: 15px;
+  font-size: 16px;
   background: var(--bg-card);
   transition: var(--transition);
   font-family: inherit;
@@ -129,7 +129,7 @@ input:focus, select:focus, textarea:focus {
   background: var(--bg-card);
   cursor: pointer;
   transition: var(--transition);
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text-light);
   text-align: center;
 }
@@ -147,6 +147,7 @@ input:focus, select:focus, textarea:focus {
 .file-input-label i {
   margin-right: 8px;
   color: var(--button-primary);
+  font-size: 18px;
 }
 
 #fotos {
@@ -229,6 +230,10 @@ input:focus, select:focus, textarea:focus {
   font-family: inherit;
   letter-spacing: -0.01em;
   color: #fff;
+}
+
+.actions button i {
+    font-size: 18px;
 }
 
 .actions button.full-width {
@@ -561,7 +566,7 @@ footer b {
 .top-header button {
   background: none;
   border: none;
-  font-size: 18px;
+  font-size: 20px;
   color: var(--text-dark);
   cursor: pointer;
   padding: 8px;
@@ -570,8 +575,8 @@ footer b {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
 }
 
 .top-header button:hover {
