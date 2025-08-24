@@ -306,6 +306,19 @@ function rebuildNotasPendentesList(pagina = 1) {
       </div>
     `;
     listaNotasPendentes.appendChild(li);
+
+    const obsEditSelect = li.querySelector(`#obsEdit-${globalIndex}`);
+    const obsOptions = ["Recurso a ser pago", "C/C CTI", "C/C SANTA CASA", "Recurso Proprio Santa Casa", "Recurso Proprio CTI", "PAGO"];
+    obsOptions.forEach(optionText => {
+        const option = document.createElement('option');
+        option.value = optionText;
+        option.textContent = optionText;
+        obsEditSelect.appendChild(option);
+    });
+
+    if (nota.obs) {
+        obsEditSelect.value = nota.obs;
+    }
   });
 
   criarPaginacao(paginacaoNotasEl, notasPendentes.length, pagina, 'notas');
