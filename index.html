@@ -90,11 +90,12 @@
         <div id="miniaturas-container"></div>
       </div>
 
-      <div class="actions">
-        <button id="salvarBtn" onclick="salvarNota()"><i class="fas fa-check"></i> Salvar</button>
-        <button id="exportBtn" onclick="exportar()"><i class="fas fa-clipboard"></i> Copiar</button>
-        <button id="limparBtn" onclick="limpar()"><i class="fas fa-trash"></i> Limpar</button>
-        <button id="gerenciarBtn" class="full-width" onclick="openPopup('gerenciar-notas-popup')"><i class="fas fa-list-check"></i> Gerenciar Notas</button>
+                  <div class="actions">
+                <button id="salvarBtn" onclick="salvarNota()"><i class="fas fa-save"></i> Salvar</button>
+                <button id="exportBtn" onclick="exportar()"><i class="fas fa-clipboard"></i> Copiar Texto</button>
+                <button id="limparBtn" class="full-width" onclick="limpar()"><i class="fas fa-eraser"></i> Limpar Tudo</button>
+            </div>
+
       </div>
 
       <textarea id="saida" readonly placeholder="O texto para sua planilha aparecerá aqui..."></textarea>
