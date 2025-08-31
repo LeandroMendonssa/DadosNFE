@@ -18,47 +18,19 @@
 </head>
 <body class="is-loading" data-theme="light" data-icon-theme="solid">
    
-    <div id="login-screen">
+    <div id="login-screen" style="display: flex;">
         <div class="login-box">
             <div class="icon"><i class="fas fa-lock" id="login-icon"></i></div>
             <h1>Acesso Restrito</h1>
-            <p>Por favor, insira a senha para continuar.</p>
-            <input type="password" id="password-input" placeholder="••••••••">
+            <p>Faça login para continuar.</p>
+            <input type="email" id="email-input" placeholder="Seu e-mail" style="margin-bottom: 16px;">
+            <input type="password" id="password-input" placeholder="Sua senha">
             <div id="error-message" class="error-message"></div>
             <button id="login-button" class="actions-button" onclick="handleLogin()">Entrar</button>
         </div>
     </div>
     
-    <div id="security-check-screen">
-        <div class="login-box">
-            <div class="icon"><i class="fas fa-shield-alt"></i></div>
-            <h1>Verificação de Segurança</h1>
-            <p>Por favor, digite sua senha atual para prosseguir.</p>
-            <input type="password" id="security-check-password-input" placeholder="••••••••">
-            <div id="security-check-error-message" class="error-message"></div>
-            <div class="actions">
-                <button class="actions-button" style="background-color: var(--text-light);" onclick="cancelSecurityCheck()">Cancelar</button>
-                <button class="actions-button" onclick="handleSecurityCheck()">Verificar</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="password-change-screen">
-        <div class="login-box">
-            <div class="icon"><i class="fas fa-key"></i></div>
-            <h1>Alterar Senha</h1>
-            <p>Crie uma nova senha para sua conta.</p>
-            <input type="password" id="new-password-input" placeholder="Nova Senha">
-            <input type="password" id="confirm-password-input" placeholder="Confirmar Senha">
-            <div id="password-error-message" class="error-message"></div>
-            <div class="actions">
-                <button class="actions-button" style="background-color: var(--text-light);" onclick="closePasswordChangeScreen()">Cancelar</button>
-                <button class="actions-button" onclick="handleSaveNewPassword()">Salvar</button>
-            </div>
-        </div>
-    </div>
-   
-    <div class="app-container" id="app-container">
+    <div class="app-container" id="app-container" style="display: none;">
         <nav class="sidebar">
             <div class="sidebar-header">Minhas Notas</div>
             <ul id="sidebar-nav" class="sidebar-nav"></ul>
@@ -69,14 +41,10 @@
                 <h1 id="main-header-title" class="header-title">Adicionar</h1>
                 <div class="header-actions">
                     <button class="header-action" id="sync-btn" onclick="sincronizarManualmente(this)">
-                        <span class="icon-wrapper">
-                            <i class="fa-solid fa-sync-alt"></i><span class="material-icons">sync</span>
-                        </span>
+                        <span class="icon-wrapper"><i class="fa-solid fa-sync-alt"></i><span class="material-icons">sync</span></span>
                     </button>
-                    <button class="header-action" id="close-btn">
-                        <span class="icon-wrapper">
-                            <i class="fa-solid fa-times"></i><span class="material-icons">close</span>
-                        </span>
+                    <button class="header-action" id="close-btn" style="display: none;">
+                        <span class="icon-wrapper"><i class="fa-solid fa-times"></i><span class="material-icons">close</span></span>
                     </button>
                 </div>
             </header>
@@ -93,7 +61,7 @@
             <h2 id="confirm-title"></h2>
             <p id="confirm-message"></p>
             <div class="confirm-actions">
-                <button id="cancel-btn" class="actions-button">Cancelar</button>
+                <button id="cancel-btn" class="actions-button" style="background-color: var(--text-light);">Cancelar</button>
                 <button id="confirm-btn" class="actions-button">Confirmar</button>
             </div>
         </div>
@@ -115,7 +83,8 @@
     <div id="toast" class="toast"></div>
     
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script> <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     
     <script src="script.js" defer></script>
 </body>
